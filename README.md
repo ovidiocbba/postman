@@ -42,7 +42,7 @@ pipeline {
 }
 ``` 
 ------
-### Trello API - Postman CLI - freestyle
+### Trello API - Newman - freestyle
 Secret text   
 ```POSTMAN_API_KEY```  
 Credentials  
