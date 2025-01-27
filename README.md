@@ -1,3 +1,7 @@
+## CI
+[GitHub Actions](https://github.com/ovidiocbba/running-newman-with-github-actions)  
+[Gitlab CI](https://gitlab.com/ovidiomiranda/running-newman-with-gitlab-ci)
+
 ## Jenkins
 Execute Jenkins
 ```shell
