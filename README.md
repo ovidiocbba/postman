@@ -7,6 +7,16 @@ Execute Jenkins
 ```shell
 docker run -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home --env JAVA_OPTS="-Dfile.encoding=UTF8" vdespa/jenkins-postman
 ```
+```shell
+docker run -d --name jenkins-postman \
+  -p 8080:8080 \
+  -p 50000:50000 \
+  --restart=unless-stopped \
+  -v jenkins_home:/var/jenkins_home \
+  -e JAVA_OPTS="-Dfile.encoding=UTF8" \
+  vdespa/jenkins-postman
+```
+
 ### Trello API - Postman CLI - freestyle  
 Secret text   
 ```POSTMAN_API_KEY```  
