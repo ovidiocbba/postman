@@ -1,4 +1,81 @@
-## CI
+<h1>Table of contents</h1>
+
+- [Newman](#newman)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [Global Installation](#global-installation)
+  - [Basic Usage](#basic-usage)
+- [Reports](#reports)
+- [Jenkins](#jenkins)
+  - [Trello API - Postman CLI - freestyle](#trello-api---postman-cli---freestyle)
+  - [Trello API - Postman CLI - Jenkinsfile](#trello-api---postman-cli---jenkinsfile)
+  - [Trello API - Newman - freestyle](#trello-api---newman---freestyle)
+  - [Trello API - Newman - Jenkinsfile](#trello-api---newman---jenkinsfile)
+---
+## Newman
+
+### Prerequisites
+
+- **Node.js**: Newman runs on Node.js. Download and **install the latest version** from [nodejs.org](https://nodejs.org/).
+- **npm**: Comes bundled with Node.js and is the package manager used to install Newman.
+
+### Installation
+
+#### Global Installation
+Install Newman globally to run the `newman` command from anywhere:
+
+```bash
+npm install -g newman
+```
+
+Verify the installation:
+
+```bash
+newman --version
+```
+```bash
+6.2.1
+```
+
+### Basic Usage
+
+Assuming you have:
+- `my-collection.json`: Your exported Postman collection
+- `my-environment.json` (optional): Your environment variables file
+
+**Run a collection and view console output**
+
+```bash
+newman run my-collection.json \
+  --environment my-environment.json
+```
+
+**Disable SSL certificate validation**
+
+```bash
+newman run my-collection.json \
+  --environment my-environment.json \
+  --insecure
+```
+
+**Generate an HTML report**
+
+1. Install the HTML reporter:
+   ```bash
+   npm install -g newman-reporter-html
+   ```
+2. Run with HTML reporting:
+   ```bash
+   newman run my-collection.json \
+     --environment my-environment.json \
+     --reporters cli,html \
+     --reporter-html-export report.html
+   ```
+   This creates a `report.html` file with a browsable report.
+
+---
+## Reports
+
 [GitHub Actions](https://github.com/ovidiocbba/running-newman-with-github-actions)  
 [Gitlab CI](https://gitlab.com/ovidiomiranda/running-newman-with-gitlab-ci)
 
