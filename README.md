@@ -6,6 +6,7 @@
     - [Global Installation](#global-installation)
   - [Basic Usage](#basic-usage)
 - [Reports](#reports)
+- [Gitlab CI](#gitlab-ci)
 - [Jenkins](#jenkins)
   - [Trello API - Postman CLI - freestyle](#trello-api---postman-cli---freestyle)
   - [Trello API - Postman CLI - Jenkinsfile](#trello-api---postman-cli---jenkinsfile)
@@ -75,9 +76,35 @@ newman run my-collection.json \
 
 ---
 ## Reports
+**Installing Newman Reporters**
 
+To enable advanced reports in Newman such as `htmlextra` (visual HTML reports) and `junit` (XML reports for CI/CD), you need to install the following additional libraries globally:
+
+**1. HTML Extra Reporter**
+
+Install the advanced HTML reporter:
+
+```bash
+npm install -g newman-reporter-htmlextra
+```
+**Example**
 [GitHub Actions](https://github.com/ovidiocbba/running-newman-with-github-actions)  
+
+--
+**Installing the Basic HTML Reporter**
+
+Newman also supports a simple built-in HTML reporter via the `newman-reporter-html` package. This is useful for generating lightweight HTML reports with summary info.
+
+**Installation**
+
+Install the basic HTML reporter globally:
+
+```bash
+npm install -g newman-reporter-html
+```
+
 [Gitlab CI](https://gitlab.com/ovidiomiranda/running-newman-with-gitlab-ci)
+---
 
 ## Jenkins
 Execute Jenkins
